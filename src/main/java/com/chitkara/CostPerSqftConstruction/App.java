@@ -1,13 +1,20 @@
 package com.chitkara.CostPerSqftConstruction;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 public class App {
 
+    private static Logger LOGGER = LogManager.getLogger(App.class);
 
     public static void main(String[] args) {
+
+
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Area: ");
+        LOGGER.info("Enter Area: ");
+
         double area = sc.nextDouble();
         sc.nextLine();
         printStandardMaterials();
@@ -15,7 +22,8 @@ public class App {
 
         boolean automation = false;
         if(material.contains("high")) {
-            System.out.println("Select automation (true/false) : ");
+            LOGGER.info("Select automation (true/false) : ");
+
             automation = sc.nextBoolean();
 
         }
@@ -27,10 +35,13 @@ public class App {
 
     public static void printStandardMaterials()
     {
-        System.out.println("Choose material: ");
-        System.out.println("Type 'standard' for standardMaterial: ");
-        System.out.println("Type 'medium' for mediumStandardMaterial: ");
-        System.out.println("Type 'high' for highStandardMaterial: ");
+        LOGGER.info("Choose material: ");
+        LOGGER.info("Type 'standard' for standardMaterial:  ");
+        LOGGER.info("Type 'medium' for mediumStandardMaterial: ");
+        LOGGER.info("Type 'high' for highStandardMaterial: ");
+
+
+
     }
 
 

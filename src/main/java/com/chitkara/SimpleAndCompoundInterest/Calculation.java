@@ -1,24 +1,33 @@
 package com.chitkara.SimpleAndCompoundInterest;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 
 public class Calculation
 {
+    private static Logger LOGGER = LogManager.getLogger(Calculation.class);
     public static void main( String[] args )
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter principal: ");
+      LOGGER.info("Enter principal: ");
+
         double principal = sc.nextDouble();
-        System.out.println("Enter rate: ");
+        LOGGER.info("Enter rate: ");
+
         double rate = sc.nextDouble();
-        System.out.println("Enter time: ");
+        LOGGER.info("Enter time: ");
+
         double time = sc.nextDouble();
 
       SimpleInterest simpleInterest = new SimpleInterest(principal,rate,time);
-        System.out.println("SIMPLE INTEREST: "+simpleInterest.CalcSimpleInterest());
+        LOGGER.info("SIMPLE INTEREST: "+simpleInterest.CalcSimpleInterest());
+
       CompoundInterest compoundInterest = new CompoundInterest(principal,rate,time);
-        System.out.println("COMPOUND INTEREST: "+compoundInterest.CalcCompoundInterest());
+        LOGGER.info("COMPOUND INTEREST: "+compoundInterest.CalcCompoundInterest());
+
 
     }
 }

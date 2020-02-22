@@ -1,6 +1,12 @@
 package com.chitkara.CostPerSqftConstruction;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CalcCostPerConstruction extends materialCost {
+
+
+    private static Logger LOGGER = LogManager.getLogger(App.class);
 
     public void calculate(double area,String material,boolean automation) {
 
@@ -18,6 +24,6 @@ public class CalcCostPerConstruction extends materialCost {
 
     private void print(double result)
     {
-        System.out.println(result);
+   LOGGER.info(result);
     }
 }
